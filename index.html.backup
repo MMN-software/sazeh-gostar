@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>سازه‌گستر پارس | پیمانکاری ساختمانی و بازسازی</title>
 <meta name="description" content="سازه‌گستر پارس، ارائه‌دهنده خدمات تخصصی ساختمانی، بازسازی، سفت‌کاری، کاشی‌کاری، سنگ‌کاری و طراحی داخلی. با بیش از ۱۵ سال تجربه در پروژه‌های مسکونی و تجاری.">
-<meta name="keywords" content="پیمانکاری ساختمانی, بازسازی, سفت‌کاری, کاشی‌کاری, سنگ‌کاری, طراحی داخلی, سازه گستر پارس">
+<meta name="keŵlywords" content="پیمانکاری ساختمانی, بازسازی, سفت‌کاری, کاشی‌کاری, سنگ‌کاری, طراحی داخلی, سازه گستر پارس">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
 <style>
@@ -60,7 +58,7 @@ input,select,textarea{font-family:inherit;font-size:14px}
 .mobile-menu .btn{margin-top:16px;width:100%}
 
 /* ===== Hero ===== */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:linear-gradient(180deg,rgba(15,42,61,.85),rgba(15,42,61,.92)),url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;background-attachment:fixed}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:linear-gradient(180deg,rgba(15,42,61,.85),rgba(15,42,61,.92)),url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80') center/cover fixed}
 .hero::after{content:"";position:absolute;bottom:0;right:0;left:0;height:120px;background:linear-gradient(transparent,var(--sand));pointer-events:none}
 .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center;padding:0 20px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;color:var(--orange2);background:rgba(232,114,42,.12);border:1px solid rgba(232,114,42,.3);padding:8px 18px;border-radius:50px;font-size:13px;margin-bottom:26px}
@@ -202,9 +200,6 @@ input,select,textarea{font-family:inherit;font-size:14px}
 .breadcrumb{display:flex;gap:8px;justify-content:center;margin-top:18px;font-size:13px;color:rgba(255,255,255,.55);position:relative}
 .breadcrumb a:hover{color:var(--orange2)}
 
-/* ===== Map ===== */
-.map-frame{width:100%;height:280px;border:0;border-radius:var(--radius);box-shadow:var(--shadow)}
-
 /* ===== Forms ===== */
 .form-card{background:#fff;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);border:1px solid rgba(232,226,214,.6)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -228,11 +223,15 @@ input,select,textarea{font-family:inherit;font-size:14px}
 .reveal{opacity:0;transform:translateY(30px);transition:.8s cubic-bezier(.4,0,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
+/* ===== Gallery Preview ===== */
+.gallery-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.gallery-preview img{width:100%;height:160px;object-fit:cover;border-radius:var(--radius-sm);cursor:pointer;transition:.35s;box-shadow:var(--shadow)}
+.gallery-preview img:hover{transform:scale(1.05);box-shadow:var(--shadow-lg)}
+
 /* ===== Responsive ===== */
 @media(max-width:1024px){
   .nav{display:none}
   .menu-toggle{display:flex}
-  .header-actions .btn-orange{display:none}
   .about-grid{grid-template-columns:1fr;gap:30px}
   .about-img img{min-height:320px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
@@ -240,7 +239,7 @@ input,select,textarea{font-family:inherit;font-size:14px}
   .steps{grid-template-columns:repeat(2,1fr);gap:34px}
   .steps::before{display:none}
   .tstm-grid{grid-template-columns:1fr}
-  .hero{background-attachment:scroll}
+  .gallery-preview{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
   .section{padding:60px 0}
@@ -256,6 +255,8 @@ input,select,textarea{font-family:inherit;font-size:14px}
   .features-list{grid-template-columns:1fr}
   .cta{padding:50px 22px}
   .toast{right:14px;left:14px;bottom:14px;max-width:none}
+  .gallery-preview{grid-template-columns:repeat(2,1fr)}
+  .gallery-preview img{height:120px}
   .projects-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
 }
@@ -263,6 +264,7 @@ input,select,textarea{font-family:inherit;font-size:14px}
 </head>
 <body>
 
+<!-- ============ HEADER ============ -->
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#/" class="logo" onclick="go('home')">
@@ -279,7 +281,7 @@ input,select,textarea{font-family:inherit;font-size:14px}
     </nav>
     <div class="header-actions">
       <a href="#/contact" class="btn btn-orange">درخواست مشاوره</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="منو" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="منو">☰</button>
     </div>
   </div>
 </header>
@@ -296,16 +298,7 @@ input,select,textarea{font-family:inherit;font-size:14px}
 
 <main id="app"></main>
 
-<noscript>
-  <div style="padding:100px 20px;text-align:center;font-family:Tahoma,sans-serif;background:#f7f3ec;min-height:100vh;display:flex;align-items:center;justify-content:center">
-    <div style="max-width:500px">
-      <div style="font-size:60px;margin-bottom:20px">⚠️</div>
-      <h1 style="color:#0f2a3d;font-size:22px;margin-bottom:14px">جاوااسکریپت غیرفعال است</h1>
-      <p style="color:#6b7789;line-height:2">برای مشاهده این وب‌سایت، لطفاً جاوااسکریپت مرورگر خود را فعال کنید.</p>
-    </div>
-  </div>
-</noscript>
-
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -425,7 +418,7 @@ function parseHash(){
 function handleRoute(){
   const { path } = parseHash();
   state.route = path;
-  window.scrollTo({top:0, behavior:'auto'});
+  window.scrollTo({top:0, behavior:'instant'});
   rerender();
   updateActiveNav(path);
   closeMobileMenu();
@@ -455,7 +448,6 @@ function rerender(){
   app.innerHTML = html;
   initReveal();
   initStatsCounters();
-  if(path === 'projects') renderProjectsGrid();
 }
 
 /* ============================================================
@@ -481,6 +473,7 @@ function renderHome(){
     </div>
   </section>
 
+  <!-- Services -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -501,6 +494,7 @@ function renderHome(){
     </div>
   </section>
 
+  <!-- Stats -->
   <section class="stats">
     <div class="container">
       <div class="stats-grid">
@@ -512,6 +506,7 @@ function renderHome(){
     </div>
   </section>
 
+  <!-- Projects -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -545,6 +540,7 @@ function renderHome(){
     </div>
   </section>
 
+  <!-- About brief -->
   <section class="section" style="background:var(--sand2)">
     <div class="container">
       <div class="about-grid reveal">
@@ -568,6 +564,7 @@ function renderHome(){
     </div>
   </section>
 
+  <!-- Process -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -583,6 +580,7 @@ function renderHome(){
     </div>
   </section>
 
+  <!-- Team -->
   <section class="section" style="background:var(--sand2)">
     <div class="container">
       <div class="section-head reveal">
@@ -603,6 +601,7 @@ function renderHome(){
     </div>
   </section>
 
+  <!-- Testimonials -->
   <section class="section tstm">
     <div class="container">
       <div class="section-head reveal">
@@ -629,6 +628,7 @@ function renderHome(){
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="section">
     <div class="container">
       <div class="cta reveal">
@@ -702,17 +702,20 @@ function renderProjects(){
   <section class="section">
     <div class="container">
       <div class="filter-btns">
-        ${cats.map(c=>`<button type="button" class="filter-btn ${c.id==='all'?'active':''}" onclick="filterProjects('${c.id}', this)">${c.label}</button>`).join('')}
+        ${cats.map(c=>`<button class="filter-btn ${c.id==='all'?'active':''}" onclick="filterProjects('${c.id}')">${c.label}</button>`).join('')}
       </div>
       <div class="projects-grid" id="projectsGrid"></div>
     </div>
   </section>`;
 }
 
-function filterProjects(cat, btn){
+function filterProjects(cat){
   state.projectFilter = cat;
-  $$('.filter-btn').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
+  $$('.filter-btn').forEach(b=>{
+    b.classList.toggle('active', b.textContent === document.querySelector(`.filter-btn`).textContent ? false : false);
+  });
+  $$('.filter-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
   renderProjectsGrid();
 }
 
@@ -743,6 +746,13 @@ function renderProjectsGrid(){
   `).join('');
   initReveal();
 }
+
+/* Override rerender for projects page to also render grid */
+const origRerender = rerender;
+rerender = function(){
+  origRerender();
+  if(state.route === 'projects') renderProjectsGrid();
+};
 
 /* ============================================================
    PROJECT DETAIL
@@ -964,7 +974,7 @@ function renderContact(){
             <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px"><span style="color:var(--muted)">پنجشنبه</span><strong style="color:var(--navy)">۸:۰۰ تا ۱۳:۰۰</strong></div>
             <div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--muted)">جمعه</span><strong style="color:#e74c3c">تعطیل</strong></div>
           </div>
-          <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=51.30,35.68,51.40,35.75&layer=mapnik&marker=35.71,51.35"></iframe>
+          <iframe class="map-frame" style="width:100%;height:280px;border:0;border-radius:var(--radius)" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=51.30,35.68,51.40,35.75&layer=mapnik&marker=35.71,51.35"></iframe>
         </div>
       </div>
     </div>
@@ -1011,19 +1021,9 @@ function subscribeNews(e){
 /* ============================================================
    MOBILE MENU
 ============================================================ */
-function openMobileMenu(){ 
-  $('#mobileMenu').classList.add('open'); 
-  document.body.style.overflow='hidden';
-  $('#menuToggle').setAttribute('aria-expanded', 'true');
-}
-function closeMobileMenu(){ 
-  $('#mobileMenu').classList.remove('open'); 
-  document.body.style.overflow='';
-  $('#menuToggle').setAttribute('aria-expanded', 'false');
-}
-function toggleMobileMenu(){ 
-  $('#mobileMenu').classList.contains('open') ? closeMobileMenu() : openMobileMenu(); 
-}
+function openMobileMenu(){ $('#mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileMenu(){ $('#mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+function toggleMobileMenu(){ $('#mobileMenu').classList.contains('open') ? closeMobileMenu() : openMobileMenu(); }
 
 /* ============================================================
    REVEAL & COUNTERS
@@ -1037,7 +1037,7 @@ function initReveal(){
   $$('.reveal').forEach(el=> revealObserver.observe(el));
 }
 
-const countersDone = new WeakSet();
+let countersDone = new Set();
 function initStatsCounters(){
   const els = $$('[data-count]');
   const obs = new IntersectionObserver(entries=>{
